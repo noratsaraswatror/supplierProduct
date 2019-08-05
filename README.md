@@ -6,31 +6,32 @@ There are also an Admin dashboard where admin can populate data with csv(rightno
 # How to Setup:
 
 Clone the app from main repositories(repositorie is public). 
-<br>
+
+
 git clone https://github.com/noratsaraswatror/supplierProduct.git 
 
 
 cd supplierProduct 
-<br>
+
 bundle install 
 
 Database migration: (create database and migrate tables)
-<br>
+
 rails db:create 
-<br>
+
 rails db:migrate 
-<br>
+
 Admin user install: 
-<br>
+
 rails db:seed 
-<br>
+
 #demo link 
-<br>
+
 https://supplierproduct.herokuapp.com
 
 
 Admin Login(default provide)
-<br>
+
 Admin can login with admin@example.com and password '123456789'
 
 Supplier Registeration & Login 

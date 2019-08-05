@@ -1,0 +1,70 @@
+
+<%#= render "devise/shared/links" %>
+
+
+<style type="text/css">
+  .login-form {
+    width: 600px;
+      margin: 50px auto;
+  }
+    .login-form form {
+      margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+    .btn {        
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
+<div class="login-form">
+ <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+    <h2 class="text-left">Edit Profile</h2>   
+    <div class="form-group">
+      <%= f.label "Name*" %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "email",placeholder: "John Doe",class: "form-control" %>
+    </div>    
+    <div class="form-group">
+      <%= f.label "Email*" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "john.doe@example.com",class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Phone*" %><br />
+      <%= f.text_field :phone, autofocus: true, autocomplete: "email",placeholder: "+91 9999999999",class: "form-control" %>
+    </div>   
+    <div class="form-group">
+      <%= f.label "City*" %><br />
+      <select class="custom-select" name="user[city]">
+        <option selected value="new_delhi">New Delhi</option>
+        <option value="gurgoan">Gurgoan</option>
+      </select>
+    
+    </div>  
+    <div class="form-group">
+      <%= f.label "Country*" %><br />
+      <select class="custom-select" name="user[country]">
+        <option selected value="india">India</option>
+      </select>
+      <%#= f.hidden_field :role, "customer"  %>
+    </div>  
+    <div class="form-group">
+      <%= f.label "User name*" %><br />
+      <%= f.text_field :user_name, autofocus: true, autocomplete: "email",placeholder: "johndoe",class: "form-control" %>
+    </div>  
+
+    <div class="form-group">
+        <%= f.submit "Sign Up",class:"btn btn-primary btn-block" %>
+    </div>     
+
+  <% end %>
+    
+</div>

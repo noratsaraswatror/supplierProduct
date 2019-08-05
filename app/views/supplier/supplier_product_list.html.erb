@@ -1,0 +1,77 @@
+  <style> 
+      h1.head{ 
+        color: green; 
+        text-align: left; 
+      } 
+      div.box{ 
+        height: 170px; 
+        width: 166px; 
+        border: 1px dashed black; 
+        background: #E3F2FD; 
+        margin: 0 20px; 
+      } 
+    </style>
+
+<div class="container"><!-- For making div reponsive -->
+     
+  
+      <!-- float-right, bootstrap class -->
+      <div class="float-left  box"> 
+          
+      </div> 
+   	 	<h1 class="head"><%= @supplier.name%></h1> 
+      <p> 
+     	 New  Delhi
+      </p> 
+	     <p> 
+	     	 New  Delhi
+	     </p>
+
+    </div> 
+		<div class="container">
+	    <div class="float-left " style="margin: 40px 0px 0px 10px;"> 
+	        <h1 class="head">Products</h1>
+				
+	    </div>	
+			<div class="float-left "> 
+				<hr>  
+			</div>
+		</div>
+		<div style="text-algin: right;">
+			<input type="checkbox" name="yousendit" id="yousendit" value="1" onclick="return yousendit();"/>
+			<label>Show inactive Products</label>
+			<script>
+			function yousendit(){
+			    if(document.getElementById('yousendit').checked){
+			        window.location='http://localhost:3000/supplier/supplier_product_list?supplier_id=<%=@supplier.id%>&is_active=false';
+			        return false;
+						}
+						else
+			        window.location='http://localhost:3000/supplier/supplier_product_list?supplier_id=<%=@supplier.id%>&is_active=true';
+			        return false;
+						{
+			    }
+			    return true;
+
+			}
+			</script>
+		</div>
+				<div class="container">
+		<table>
+		
+		<%@products.in_groups_of(4, false) do |row_tag| %>
+		  <tr>
+		    <% for tag in row_tag %>
+	     
+		      <td style="border: 1px solid;">
+	      <div class="box"> 
+     		 
+	      </div>
+					<h4 class="head" style="width:166px"><%= tag.product.title %></h4>
+						</td>
+		    <% end %>
+		  </tr>
+			<br>
+		<% end %>
+		</table>
+			</div>

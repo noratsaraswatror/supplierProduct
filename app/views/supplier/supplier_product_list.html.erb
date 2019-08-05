@@ -8,7 +8,7 @@
         width: 166px; 
         border: 1px dashed black; 
         background: #E3F2FD; 
-        margin: 0 20px; 
+        margin: 20px 20px; 
       } 
       p {
       	   width: 170px;
@@ -67,14 +67,14 @@
 		
 		<%@products.in_groups_of(4, false) do |row_tag| %>
 		  <tr>
-		    <% for tag in row_tag %>
+		  <% for tag in row_tag %>
 	     
-		      <td style="border: 1px solid;">
+		   <td style="border: 1px solid;">
 	      <div class="box"> 
      		 
 	      </div>
-					<p class="head" style="width:166px"><%= tag.product.title %></p>
-						</td>
+				<p class="head" style="width:166px "><%=raw tag.product.title.truncate(20)  %></p>
+			</td>
 		    <% end %>
 		  </tr>
 			<br>

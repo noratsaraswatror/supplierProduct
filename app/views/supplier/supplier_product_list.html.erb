@@ -43,11 +43,11 @@
 			<script>
 			function yousendit(){
 			    if(document.getElementById('yousendit').checked){
-			        window.location='http://localhost:3000/supplier/supplier_product_list?supplier_id=<%=@supplier.id%>&is_active=false';
+			        window.location='https://supplierproduct.herokuapp.com//supplier/supplier_product_list?supplier_id=<%=@supplier.id%>&is_active=false';
 			        return false;
 						}
 						else
-			        window.location='http://localhost:3000/supplier/supplier_product_list?supplier_id=<%=@supplier.id%>&is_active=true';
+			        window.location='https://supplierproduct.herokuapp.com//supplier/supplier_product_list?supplier_id=<%=@supplier.id%>&is_active=true';
 			        return false;
 						{
 			    }
